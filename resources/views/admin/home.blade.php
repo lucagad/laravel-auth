@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    Backend Administrator
                 </div>
             </div>
         </div>
