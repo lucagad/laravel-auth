@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container my-4">
@@ -24,7 +24,7 @@
         <td>{{ $post->id }}</td>
         <td>{{ $post->title }}</td>
         <td>
-          <a class="btn btn-primary" href="#">SHOW</a>
+          <a class="btn btn-primary" href=" {{ route('admin.posts.show', $post)  }}">SHOW</a>
           <a class="btn btn-secondary" href="#">EDIT</a>
 
           <form class = "d-inline"
