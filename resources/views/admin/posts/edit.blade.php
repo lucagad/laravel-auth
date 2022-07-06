@@ -28,6 +28,17 @@
                     @method('PUT')
 
                     <div class="mb-3">
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger" role="alert">
+                                <ul>
+                                    @foreach ($errors->all() as $error )
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <label for="title" class="form-label">Titolo del Post</label>
                         <input type="text" id="title"
                             value="{{$post->title}}"
