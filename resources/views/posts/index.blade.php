@@ -25,7 +25,7 @@
         <td>{{ $post->title }}</td>
         <td>
           <a class="btn btn-primary" href=" {{ route('admin.posts.show', $post)  }}">SHOW</a>
-          <a class="btn btn-secondary" href="#">EDIT</a>
+          <a class="btn btn-secondary" href="{{ route('admin.posts.edit', $post)  }}">EDIT</a>
 
           <form class = "d-inline"
                 onsubmit = "return confirm('Do you confirm the deletion of the ## {{ $post->title }} ## post?')"
@@ -43,6 +43,8 @@
       
     </tbody>
   </table>
+
+  {{ $posts->links() }}
 
 </div>
 @endsection
