@@ -5,7 +5,7 @@
 
   <section class="d-flex justify-content-between align-items-center">
     <h1 class="d-inline">Posts List </h1>
-    <a class="btn btn-success" href="#">ADD</a>
+    <a class="btn btn-success" href="{{ route('admin.posts.create') }}">ADD</a>
   </section>
 
   

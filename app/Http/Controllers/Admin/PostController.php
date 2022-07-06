@@ -29,7 +29,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -40,7 +40,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $new_post = new Post();
+        $data['slug'] = $this->createSlug($data['title']);
+
+        $new_post->fill($data);
+        $new_post->save();
+
+        return redirect()->route('admin.posts.show', $new_post);
     }
 
     /**
@@ -69,7 +77,7 @@ class PostController extends Controller
         if($post){
 
             return view('posts.edit', compact('post'));
-            
+
         } else { abort(404, 'Post not present in the database');}
     }
 
