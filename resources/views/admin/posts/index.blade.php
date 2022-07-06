@@ -5,9 +5,14 @@
 
   <section class="d-flex justify-content-between align-items-center">
     <h1 class="d-inline">Lista dei Post</h1>
-    <a class="btn btn-success" href="{{ route('admin.posts.create') }}">AGGIUNGI</a>
+    <a class="btn btn-success" href="{{ route('admin.posts.create') }}">CREA</a>
   </section>
 
+  @if(session('post_deleted'))
+      <div class=" my-2 alert alert-success" role="alert">
+        {{ session('post_deleted') }}
+      </div>
+  @endif
   
   <table class="table my-5">
     <thead>
@@ -28,11 +33,10 @@
           <a class="btn btn-secondary" href="{{ route('admin.posts.edit', $post)  }}">MODIFICA</a>
 
           <form class = "d-inline"
-                onsubmit = "return confirm('Do you confirm the deletion of the ## {{ $post->title }} ## post?')"
-                action = "#" method="POST">
+                onsubmit = "return confirm('Vuoi eliminare definitivamente il post ## {{ $post->title }} ## ?')"
+                action = "{{ route('admin.posts.destroy', $post) }}" method="POST">
             @csrf
             @method ('DELETE')
-
             <button class="btn btn-danger">ELIMINA</button>
           </form>
 

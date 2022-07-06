@@ -13,7 +13,7 @@
                 <div class="row my-4 border border-dark rounded p-2">
 
                     <div class="col-4 col-lg-2 d-flex justify-content-start align-items-center">
-                        
+                        {{-- Colonna Immagine --}}
                     </div>
 
                     <div class="col-8 col-lg-10 d-flex flex-column justify-content-center align-items-start">

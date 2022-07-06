@@ -114,9 +114,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('admin.posts.index')->with('post_deleted', "Il post ## $post->title ##  è stato cancellato correttamente.");
     }
 
     private function createSlug ($string) {
