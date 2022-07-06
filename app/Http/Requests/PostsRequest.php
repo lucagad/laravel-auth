@@ -24,8 +24,8 @@ class PostsRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=> 'required|max:255|min:3',
-            'content'=> 'required|min:3',
+            'title' => 'required|max:255|min:3',
+            'content' => 'required|min:3',
             // 'image'=> 'required|max:255|min:6',
         ];
     }
@@ -40,8 +40,9 @@ class PostsRequest extends FormRequest
             'content.required' => 'Il campo content è obbligatorio',
             'content.min' => 'Il campo content deve avere minimo :min caratteri',
             'image.required' => 'Il campo URL immagine è obbligatorio',
-            'image.max'=> 'Il campo URL immagine deve avere al massimo :max caratteri',
-            'image.min'=> 'Il campo URL immagine deve avere minimo :min caratteri'
+            'image.max' => 'Il campo URL immagine deve avere al massimo :max caratteri',
+            'image.min' => 'Il campo URL immagine deve avere minimo :min caratteri'
+            
         ];
     }
 }

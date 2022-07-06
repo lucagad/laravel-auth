@@ -49355,6 +49355,19 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+$().ready(function () {
+  // qui si mette tutto il codice jQuery o js in generale (dopo il caricamento del DOM)
+  console.log($('#form-edit'));
+  $('#form-edit').submit(function (event) {
+    $('#error-title').hide();
+
+    if ($('#title').val().length === 0) {
+      $('#error-title').show().text('Il titolo è un campo obbligatorio (JQuery)').fadeOut(5000);
+    }
+
+    event.preventDefault();
+  });
+});
 
 /***/ }),
 

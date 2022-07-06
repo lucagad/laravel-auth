@@ -6,8 +6,10 @@
             <div class="col-8 offset-2">
                 
                 <section class = "d-flex justify-content-between align-items-center">
+
                     <h2 class="mb-3 d-inline">Post selezionato</h2>
                     <a class="btn btn-primary" href="{{ route('admin.posts.index') }}">INDIETRO</a>
+
                 </section>
 
                 <div class="row my-4 border border-dark rounded p-2">
@@ -17,13 +19,16 @@
                     </div>
 
                     <div class="col-8 col-lg-10 d-flex flex-column justify-content-center align-items-start">
+
                         <h3>{{ $post->title }}</h3>
                         <p class="my-2 p-1 rounded">{{ $post->content }}</p>
+
                     </div>
 
                 </div>
 
-                <form action="{{ route('admin.posts.update', $post )}}" method="POST">
+                <form id="form-edit" action="{{ route('admin.posts.update', $post )}}" method="POST">
+
                     @csrf
                     @method('PUT')
 
@@ -40,6 +45,10 @@
                         @endif
 
                         <label for="title" class="form-label">Titolo del Post</label>
+                            
+                        {{-- JQuery Error --}}
+                        <div id="error-title" class="invalid-feedback" ></div>
+
                         <input type="text" id="title"
                             value="{{$post->title}}"
                             name="title" 
@@ -54,7 +63,9 @@
                     </div>
 
                     <div class="mb-3">
+
                         <label for="content" class="form-label">Contenuto del Post</label>
+
                         <textarea type="text" id="content" 
                             value="{{$post->content}}"
                             name="content" 

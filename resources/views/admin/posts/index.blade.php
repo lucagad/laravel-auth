@@ -32,9 +32,9 @@
           <a class="btn btn-primary" href=" {{ route('admin.posts.show', $post)  }}">MOSTRA</a>
           <a class="btn btn-secondary" href="{{ route('admin.posts.edit', $post)  }}">MODIFICA</a>
 
-          <form class = "d-inline"
-                onsubmit = "return confirm('Vuoi eliminare definitivamente il post ## {{ $post->title }} ## ?')"
-                action = "{{ route('admin.posts.destroy', $post) }}" method="POST">
+          <form class= "d-inline"
+                onsubmit= "return confirm('Vuoi eliminare definitivamente il post ## {{ $post->title }} ## ?')"
+                action= "{{ route('admin.posts.destroy', $post) }}" method= "POST">
             @csrf
             @method ('DELETE')
             <button class="btn btn-danger">ELIMINA</button>
