@@ -6,21 +6,21 @@
             <div class="col-8 offset-2">
 
                 <section class = "d-flex justify-content-between align-items-center">
-                    <h2 class="mb-3 d-inline">Add a new Post</h2>
-                    <a class="btn btn-primary" href="{{ route('admin.posts.index') }}">BACK</a>
+                    <h2 class="mb-3 d-inline">Aggiungi nuovo Post</h2>
+                    <a class="btn btn-primary" href="{{ route('admin.posts.index') }}">INDIETRO</a>
                 </section>
 
                 <form action="{{ route('admin.posts.store')}}" method="POST">
                     @csrf
                     <div class="mb-3">
 
-                        <label for="title" class="form-label">Post Title</label>
+                        <label for="title" class="form-label">Titolo del Post</label>
 
                         <input type="text" 
                                 id="title" 
                                 name="title" 
                                 class="form-control @error('title') is-invalid @enderror"
-                                placeholder="Post Title"
+                                placeholder="Titolo del Post"
                                 value="{{old('title')}}">
 
                         @error('title')
@@ -31,14 +31,13 @@
 
                     <div class="mb-3">
                         
-                        <label for="content" class="form-label">Comic Type</label>
+                        <label for="content" class="form-label">Contenuto del Post</label>
 
-                        <input type="text"
+                        <textarea type="text"
                                 id="content" 
                                 name="content" 
                                 class="form-control @error('content') is-invalid @enderror"
-                                placeholder="Post Content"
-                                value="{{old('content')}}" >
+                                placeholder="Contenuto del Post">{{old('content')}}</textarea>
 
                         @error('type')
                             <div class="invalid-feedback">{{$message}}</div>
@@ -59,7 +58,7 @@
                         @enderror
                     </div> --}}
 
-                    <button type="submit" class="btn btn-success">SAVE</button>
+                    <button type="submit" class="btn btn-success">SALVA</button>
                 </form>
             </div>
         </div>

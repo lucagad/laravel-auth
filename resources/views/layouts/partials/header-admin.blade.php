@@ -3,11 +3,11 @@
   <div class="container">
 
       <a class="navbar-brand" href="{{ route('home') }}">
-          Back to public website
+          Torna la sito pubblico
       </a>
       @auth
           <a class="navbar-brand" href="{{ route('admin.posts.index') }}">
-              View all posts
+              Vedi tutti i post
           </a>
       @endauth
       
@@ -43,7 +43,7 @@
                           class="nav-link"
                           href="{{ route('logout') }}"
                           onclick="event.preventDefault();
-                          document.getElementById('logout-form').submit();"> Logout
+                          document.getElementById('logout-form').submit();"> Esci
                       </a>
 
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

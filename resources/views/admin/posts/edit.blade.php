@@ -6,8 +6,8 @@
             <div class="col-8 offset-2">
                 
                 <section class = "d-flex justify-content-between align-items-center">
-                    <h2 class="mb-3 d-inline">Post selected</h2>
-                    <a class="btn btn-primary" href="{{ route('admin.posts.index') }}">BACK</a>
+                    <h2 class="mb-3 d-inline">Post selezionato</h2>
+                    <a class="btn btn-primary" href="{{ route('admin.posts.index') }}">INDIETRO</a>
                 </section>
 
                 <div class="row my-4 border border-dark rounded p-2">
@@ -28,12 +28,12 @@
                     @method('PUT')
 
                     <div class="mb-3">
-                        <label for="title" class="form-label">Post Title</label>
+                        <label for="title" class="form-label">Titolo del Post</label>
                         <input type="text" id="title"
                             value="{{$post->title}}"
                             name="title" 
                             class="form-control @error('title') is-invalid @enderror"
-                            placeholder="Post Title"
+                            placeholder="Titolo del Post"
                             value="{{old('title',$post->title)}}">
 
                         @error('title')
@@ -43,13 +43,12 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="content" class="form-label">Post Content</label>
-                        <input type="text" id="content" 
+                        <label for="content" class="form-label">Contenuto del Post</label>
+                        <textarea type="text" id="content" 
                             value="{{$post->content}}"
                             name="content" 
                             class="form-control @error('content') is-invalid @enderror"
-                            placeholder="Post Content"
-                            value="{{old('content',$post->content)}}" >
+                            placeholder="Contenuto del Post">{{old('content',$post->content)}}</textarea>
 
                         @error('content')
                             <div class="invalid-feedback">{{$message}}</div>
@@ -70,7 +69,7 @@
                         @enderror
                     </div> --}}
 
-                    <button type="submit" class="btn btn-success">SAVE</button>
+                    <button type="submit" class="btn btn-success">SALVA</button>
                 </form>
             </div>
         </div>

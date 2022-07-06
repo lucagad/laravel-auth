@@ -4,8 +4,8 @@
 <div class="container my-4">
 
   <section class="d-flex justify-content-between align-items-center">
-    <h1 class="d-inline">Posts List </h1>
-    <a class="btn btn-success" href="{{ route('admin.posts.create') }}">ADD</a>
+    <h1 class="d-inline">Lista dei Post</h1>
+    <a class="btn btn-success" href="{{ route('admin.posts.create') }}">AGGIUNGI</a>
   </section>
 
   
@@ -13,8 +13,8 @@
     <thead>
       <tr>
         <th scope="col">ID</th>
-        <th scope="col">Title</th>
-        <th scope="col">More</th>
+        <th scope="col">Titolo</th>
+        <th scope="col">Modifiche</th>
       </tr>
     </thead>
     <tbody>
@@ -24,8 +24,8 @@
         <td>{{ $post->id }}</td>
         <td>{{ $post->title }}</td>
         <td>
-          <a class="btn btn-primary" href=" {{ route('admin.posts.show', $post)  }}">SHOW</a>
-          <a class="btn btn-secondary" href="{{ route('admin.posts.edit', $post)  }}">EDIT</a>
+          <a class="btn btn-primary" href=" {{ route('admin.posts.show', $post)  }}">MOSTRA</a>
+          <a class="btn btn-secondary" href="{{ route('admin.posts.edit', $post)  }}">MODIFICA</a>
 
           <form class = "d-inline"
                 onsubmit = "return confirm('Do you confirm the deletion of the ## {{ $post->title }} ## post?')"
@@ -33,7 +33,7 @@
             @csrf
             @method ('DELETE')
 
-            <button class="btn btn-danger">DELETE</button>
+            <button class="btn btn-danger">ELIMINA</button>
           </form>
 
         </td>
